@@ -1,0 +1,15 @@
+def calc(A, B):
+    try:
+        # Convert inputs to integers
+        a = int(A)
+        b = int(B)
+        # Check if inputs are within the range
+        if 1 <= a <= 999 and 1 <= b <= 999:
+            # Multiply the inputs and return the result
+            return a * b
+        else:
+            # Return -1 if inputs are not within the range
+            return -1
+    except ValueError:
+        # Return -1 if inputs are not integers
+        return -1

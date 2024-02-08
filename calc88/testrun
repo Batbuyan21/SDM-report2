@@ -1,0 +1,19 @@
+import unittest
+import sys
+
+# Create a TestLoader instance
+loader = unittest.TestLoader()
+
+# Discover all test files in the current directory
+tests = loader.discover('.')
+
+# Specify the level of information provided by the test runner
+testRunner = unittest.runner.TextTestRunner(verbosity=2)
+
+# Run the discovered tests
+results = testRunner.run(tests)
+
+# Check if the test results were successful
+if not results.wasSuccessful():
+    # Exit with a status code of 1 if any tests failed
+    sys.exit(1)

@@ -1,0 +1,24 @@
+import unittest
+from calc_mul import calc
+
+class TestCalc(unittest.TestCase):
+
+    def test_valid_inputs(self):
+        # Test valid inputs within the range
+        self.assertEqual(6, calc(2, 3))
+        self.assertEqual(999, calc(999, 1))
+        self.assertEqual(500000, calc(500, 1000))
+
+    def test_invalid_inputs(self):
+        # Test inputs outside the range
+        self.assertEqual(-1, calc(0, 100))
+        self.assertEqual(-1, calc(100, 1000))
+        self.assertEqual(-1, calc(1000, 1000))
+
+        # Test non-integer inputs
+        self.assertEqual(-1, calc('abc', 100))
+        self.assertEqual(-1, calc(100, 'def'))
+        self.assertEqual(-1, calc('xyz', 'uvw'))
+
+if __name__ == '__main__':
+    unittest.main()
